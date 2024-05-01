@@ -1,0 +1,30 @@
+.clickDisplay {
+  display: flex;
+  align-items: center;  
+  flex-wrap: nowrap;
+  position: fixed;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 100px;
+  background-color: black;
+  color: white;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.clickDisplay span {
+  padding-left: 20px;
+}
+
+#resetButton {
+  margin-left: auto;  
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  height: 50px;
+  width: 150px;
+  background-image: linear-gradient(circle, #ffffff, #000000);
+}

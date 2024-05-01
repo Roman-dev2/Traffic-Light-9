@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "framer-motion": "^11.1.2",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@types/google-apps-script": "^1.0.83",
+    "vite": "^5.2.10"
+  }
+}

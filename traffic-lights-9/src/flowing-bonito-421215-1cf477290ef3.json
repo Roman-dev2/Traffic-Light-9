@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "flowing-bonito-421215",
+  "private_key_id": "1cf477290ef3d6b62e5c31d95294faa7ea00affa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCcN7LlunqH85bd\n8vay+nQIHpjU9UAUsfm0U5DG8fb0N+hfZmsue3HcqJfI98WMII9wgYbsTNOrvs5u\nBwNRvNEYKnvmqz8HL43182Jy+3jTgiGXH09I97kFkBAEbmsfXb4V4o21GWVywOwF\nvpS3fRJhtIWWeImQBEIOkZ9y52x6smI6l515fptW2z1ZM4f21Wibt2v82Hrf4HcZ\nfJgnavhmn26HWT7w0Dq0B2MXuloq/rd+Ujr1EVdswhUWpJhdIFP2G0gw9ZszCWtc\nnyq8VNENXxMLh6v20/dS1lIUOY+4rvbempvOBHT82E5Wsl2xOBZbX+ljnZEqSeRE\nfh5lkgZRAgMBAAECggEABSA89Hwb0nnlq/cLOi1TYRA59RdU3AKVnjs1iRjXwN5t\nxEwDMKI4Of4y0gZ/tHzXOa3L+Tuxhvu3k9VfxtvI46Yo0yIwd88LNWd5uURADBBD\nnTN+KBEi2juGkjkNg39RghY623CpV/lCTvm+/c2/kulEweUTvhNGfjcwJRA4pCz8\nDutE2s/1k+8h0bSWUOmF37qSV2gVjf/H54f9NLtip62kK/mpKzqP/7ALTeB/ZkFG\nizhp9LSkcnLnl51T4cD1PlV+ZUQAH4MN02X4GWWW8UrTiecePmx/CdIlY5k2x7nv\n69W5su8JoBXc9gmuiHxKUB6irdUHngJFzD+Bqq+hDQKBgQDIbyOL0oyEcePpmndn\nXGzEi5MOhN8iQyT2zoJrRguNdL79a4/ylxtBqbnsHQYvs6HlT1tI5qtoQc8Ny0XA\naqqbqA3wjwZdHV3MWGmE9D+0nKfhFGCQjS9ViGEMI9FyYIDEfxUuUaAoXOo8L9du\njm1wPIJcbZkmb+DPrhx0IUe9NQKBgQDHhn/W9A4nyaNgVeWzgrJChgDAHJ80O+7N\nl9z2lmMs1+zmXaHRVi93eMhzcnZxphi7xI4zZ1GmEDk69STYZtVWS9VdKTxFlsV0\nkhsNomf2LOxbXylT4e7igGh5hZlrakwJIJ5JQmysTF+uiPFs1tmf+40L9Ll9eqUy\ngD0Xv0s0LQKBgAVXAKlu+JNmvV2x4dB9I+Cwn0BZxeARzeBNbCgTe6dPHu99eB5M\nbEt5jByAQXPv4zZKwPHWQ2bJqgyCB9+yd80h0w0/ojnE2ITjLhx+rVvQeKCEfHYd\nbM9ojL1YDvJvI78Ya6YKQqwQnaTw2Vp2rO+6jPaNbPEbNfASgWuOn2ypAoGAETwX\n/NxWAK/VMfQZhFkMxtxGYlHWmq92oEG274HsDSqVpwx9dtSoAvzm67n+azC6wDVp\nRx1smxiZqPMV/K9dTDf+tS5jq2sroTchqRrXOheFTxs4Oauxc9U9sQmOSA4FhWBQ\n6+kV9Agg17WyjQE+CSi0dUztXN5kOKmFHXEDsP0CgYEAhpafRBESL7hml3fix/08\nQXLCCTSVd5UYh+iZQn1iH4AvSkUuiZ86PxcK33bai7Gox7TXk30PTpo590o9PIiF\nHmgutH/8z7SW5RPwChebEU6TnmS4yLI2e2OmaHTOOXHS5gs9OvCH+AjLSJdCHgCp\nhkxpspyp0Kf+tnSj/3MQjN4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "admin-27@flowing-bonito-421215.iam.gserviceaccount.com",
+  "client_id": "117330998303155915625",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/admin-27%40flowing-bonito-421215.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

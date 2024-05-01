@@ -1,0 +1,44 @@
+
+.trafficLightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .trafficLight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 20px 20px;
+    border-radius: 20px;
+    border: 6px solid #000;
+    margin-top: 190px;
+  }
+
+  .vertical .lightsContainer {
+    flex-direction: column;
+  }
+  
+  .horizontal .lightsContainer {
+    flex-direction: row;
+  }
+  
+
+  
+  
+  .lightsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: -12px;
+    margin-top: -12px;
+  }
+  
+
+
+  

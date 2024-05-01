@@ -1,0 +1,23 @@
+.statsBar {
+    position: absolute;
+    top: 280px; 
+    right: 600px; 
+    background: none;
+    width: 130px;  
+    padding: 5px;  
+  }
+  
+  .statsBar button {
+    padding: 5px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;  
+    width: 100%;  
+    margin: auto; 
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(255, 255, 255);
+    border-radius: 7%;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  
