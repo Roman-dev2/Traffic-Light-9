@@ -9,7 +9,7 @@ import Header from './Header';
 import HorizontalTrafficLight from './HorizontalTrafficLight';
 import VerticalTrafficLight from './VerticalTrafficLight';
 
-// Імпорт TrafficLightsProvider з відповідного файлу
+
 import { TrafficLightsProvider } from './TrafficLightsProvider';
 
 function App() {
