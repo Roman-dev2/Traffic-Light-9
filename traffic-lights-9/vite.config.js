@@ -6,9 +6,8 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist', 
-    assetsDir: 'src', 
     rollupOptions: {
-      input: '/src/App.jsx' 
+      input: '/src/index.jsx' 
     }
   }
 });
