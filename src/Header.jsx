@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import './Header.css';
+import './ClickDisplay';
 
 function Header() {
 
