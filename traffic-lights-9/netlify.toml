@@ -1,0 +1,2 @@
+[build]
+  command = "VITE_HTML_INPUT_FILE=/main.jsx vite build"
