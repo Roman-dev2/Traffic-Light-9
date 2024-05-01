@@ -8,10 +8,7 @@
     "@google/clasp": "^2.4.2",
     "@types/google-apps-script": "^1.0.83",
     "vite": "^5.2.10"
-  },
-    "scripts": {
-      "build": "vite build"
-    }
+  }
   
   
 }
