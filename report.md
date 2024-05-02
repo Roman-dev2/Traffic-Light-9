@@ -6,7 +6,11 @@
 
 ## Посилання на сайт: 
 https://6633453b5ac4788bf262170a--traffic-lights-9.netlify.app/
+
 Присутня затрима між кліком та відображенням але все працює
+
+## Посиланя на Google Sheets
+https://docs.google.com/spreadsheets/d/1R9ecTFhMNj9TzRnbpauBKo2xwQlLZDr9BxzIduFQKM8/edit?usp=sharing
 
 Була виконана публікація сайту на Netlify та налаштовано з'єднання з сервером Google Script. 
 
