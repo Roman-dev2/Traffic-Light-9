@@ -45,7 +45,7 @@ function resetClicks() {
       console.error("No data available");
       return 'No data available';
     }
-    const range = sheet.getRange("D2:D" + (1 + lightsData.length));
+    const range = sheet.getRange("D2:D" + (1 + lightsData.length - 1));  
     const resetData = Array(lightsData.length).fill([0]);
     range.setValues(resetData);
     return 'Success';
@@ -55,9 +55,11 @@ function resetClicks() {
   }
 }
 
+
 function doGet(e) {
     var output = ContentService.createTextOutput();
     output.setMimeType(ContentService.MimeType.JSON);
+
     const params = e.parameter;
     const action = params.action;
     if (action === 'fetchLights') {
@@ -69,31 +71,46 @@ function doGet(e) {
 }
 
 function doPost(e) {
-    if (!e.postData) {
-        return ContentService.createTextOutput('No postData found');
-    }
-
     try {
-        var params = JSON.parse(e.postData.contents);
-        console.log('Action:', params.action);
-        console.log('ID:', params.id);
-        console.log('State:', params.state);
-        switch(params.action) {
-            case 'setLightState':
-                var result = setLightState(params.id, params.state);
-                console.log('setLightState result:', result);
-                return ContentService.createTextOutput(result);
+        var data = JSON.parse(e.postData.contents);
+        var sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(RANGE);
+        const lightsData = fetchLights();  // Завжди отримуємо актуальні дані про світлофори
+        switch (data.action) {
             case 'resetClicks':
-                var resetResult = resetClicks();
-                console.log('resetClicks result:', resetResult);
-                return ContentService.createTextOutput(resetResult);
+                if (lightsData.length > 0) {
+                    var range = sheet.getRange('D2:D' + (1 + lightsData.length));  // Виправлення діапазону
+                    range.setValues(Array(lightsData.length).fill([0]));
+                    return ContentService.createTextOutput(JSON.stringify({status: "success", "data": "Clicks reset successfully"}))
+                                          .setMimeType(ContentService.MimeType.JSON);
+                } else {
+                    return ContentService.createTextOutput(JSON.stringify({status: "error", "data": "No lights to reset"}))
+                                          .setMimeType(ContentService.MimeType.JSON);
+                }
+            case 'setLightState':
+                const lightIndex = lightsData.findIndex(light => Number(light.id) === Number(data.id));
+                if (lightIndex !== -1) {
+                    const range = sheet.getRange("D" + (lightIndex + 2));  
+                    range.setValue(data.state);  
+                    return ContentService.createTextOutput(JSON.stringify({status: "success", "data": "Light state updated successfully"}))
+                                          .setMimeType(ContentService.MimeType.JSON);
+                } else {
+                    return ContentService.createTextOutput(JSON.stringify({status: "error", "data": "Light not found"}))
+                                          .setMimeType(ContentService.MimeType.JSON);
+                }
             default:
-                return ContentService.createTextOutput('Invalid request');
+                return ContentService.createTextOutput(JSON.stringify({status: "error", "data": "Invalid action"}))
+                                      .setMimeType(ContentService.MimeType.JSON);
         }
     } catch (error) {
-        console.log('Error:', error.toString());
-        return ContentService.createTextOutput('Error: ' + error.message);
+        return ContentService.createTextOutput(JSON.stringify({status: "error", "message": error.message}))
+                              .setMimeType(ContentService.MimeType.JSON);
     }
 }
+
+
+
+
+
+
 
 */

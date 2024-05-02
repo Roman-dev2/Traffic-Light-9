@@ -1,8 +1,9 @@
 import { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 
 export const TrafficLightsContext = createContext();
+
+const googleUrl = import.meta.env.VITE_apiURL;
 
 export const TrafficLightsProvider = ({ children }) => {
     const [lights, setLights] = useState([]);
@@ -15,24 +16,19 @@ export const TrafficLightsProvider = ({ children }) => {
 
     const fetchLights = async () => {
         try {
-            const response = await axios.get('https://script.google.com/macros/s/AKfycbw2i1RnAirjhlbvM_3Ar3mlF0xHSECRVF3M6KYQv5FwyO734CV61lFFNYIRZlLQXODu/exec?action=fetchLights');
-            if (Array.isArray(response.data)) {
-                setLights(response.data);
+            const response = await fetch(`${googleUrl}?action=fetchLights`);
+            const data = await response.json();
+            if (Array.isArray(data)) {
+                setLights(data);
             } else {
-                console.error("Отримані дані не є масивом:", response.data);
-                setLights([]);  
+                console.error("Отримані дані не є масивом:", data);
+                setLights([]);
             }
             setLoading(false);
         } catch (error) {
             console.error("Не вдалося завантажити дані:", error);
             setLoading(false);
         }
-    };
-    
-    
-
-    const toggleOrientation = () => {
-        setIsVertical(!isVertical);
     };
 
     const handleLightClick = async (id) => {
@@ -42,37 +38,51 @@ export const TrafficLightsProvider = ({ children }) => {
             return;
         }
         const newState = light.clickcount + 1;
-    
+
         try {
-            const response = await axios.post('https://script.google.com/macros/s/AKfycbw2i1RnAirjhlbvM_3Ar3mlF0xHSECRVF3M6KYQv5FwyO734CV61lFFNYIRZlLQXODu/exec', {
-                action: 'setLightState',
-                id: id,
-                state: newState
+            await fetch(googleUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                },
+                body: JSON.stringify({
+                    action: 'setLightState',
+                    id: id,
+                    state: newState
+                }),
+                mode: 'no-cors'
             });
-            if (response.data === 'Success') {
-                const updatedLights = lights.map(light => light.id === id ? { ...light, clickcount: newState } : light);
-                setLights(updatedLights);
-            } else {
-                console.error("Не вдалося оновити стан світлофору:", response.data);
-            }
+        
+            const updatedLights = lights.map(light => light.id === id ? { ...light, clickcount: newState } : light);
+            setLights(updatedLights);
         } catch (error) {
             console.error("Помилка при оновленні світлофору:", error);
         }
     };
-    
-    
-    
 
     const resetClicks = async () => {
         try {
-            await axios.post('https://script.google.com/macros/s/AKfycbw2i1RnAirjhlbvM_3Ar3mlF0xHSECRVF3M6KYQv5FwyO734CV61lFFNYIRZlLQXODu/exec', {
-                action: 'resetClicks'
+            await fetch(googleUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',  
+                },
+                body: JSON.stringify({
+                    action: 'resetClicks'
+                }),
+                mode: 'no-cors'
             });
+            
             const resetData = lights.map(light => ({ ...light, clickcount: 0 }));
             setLights(resetData);
         } catch (error) {
             console.error("Failed to reset lights:", error);
         }
+    };
+    
+
+    const toggleOrientation = () => {
+        setIsVertical(!isVertical);
     };
 
     return (
